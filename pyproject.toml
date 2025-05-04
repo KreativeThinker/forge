@@ -1,0 +1,29 @@
+[project]
+name = "forge"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "KreativeThinker",email = "sagely2005eagle@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "typer (>=0.15.3,<0.16.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "openai (>=1.77.0,<2.0.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "watchdog (>=6.0.0,<7.0.0)",
+    "apscheduler (>=3.11.0,<4.0.0)",
+    "tiktoken (>=0.9.0,<0.10.0)"
+]
+
+[tool.poetry]
+packages = [{include = "forge", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+forge = "forge.cli:app"
